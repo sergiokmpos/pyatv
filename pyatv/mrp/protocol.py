@@ -23,7 +23,7 @@ async def heartbeat_loop(protocol):
     """Periodically send heartbeat messages to device."""
     _LOGGER.debug("Starting heartbeat loop")
     count = 0
-    message = messages.create(protobuf.ProtocolMessage.SEND_COMMAND_MESSAGE)
+    message = messages.create(protobuf.ProtocolMessage.GENERIC_MESSAGE)
     while True:
         try:
             await asyncio.sleep(HEARTBEAT_INTERVAL)
